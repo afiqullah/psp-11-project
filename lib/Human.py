@@ -21,12 +21,12 @@ class Human:
         self.minerals = random.randint(1, 75)
         self.cash = 100
 
-    def viewPills(self):
+    def viewPills(self) -> list:
         """Returns a list of the dictionaries of all available pills"""
 
         return pills
 
-    def getPillInfo(self, choice: str):
+    def getPillInfo(self, choice: str) -> dict | None:
         """Get a pill's information as a dictionary. [Despacitone/Gigachadus/Aurafarmine]"""
 
         # Error handler if no choice is provided
@@ -50,7 +50,7 @@ class Human:
                 print("Error: No pill found!")
                 return None
 
-    def eatPill(self, choice: str):
+    def eatPill(self, choice: str) -> str | None:
         """Purchase a certain pill and eat it, gaining its nutrition. [Despacitone/Gigachadus/Aurafarmine]"""
 
         # Error handler if no choice is provided
@@ -88,7 +88,7 @@ class Human:
             print("Error: No pill is eaten.")
             return None
 
-    def getBestPill(self):
+    def getBestPill(self) -> str:
         """Automatically determine the best pill to eat at the moment based on current health status."""
 
         # Despacitone: HIGH Vitamins, MEDIUM Minerals
@@ -124,7 +124,7 @@ class Human:
         else:
             return "Aurafarmine"
 
-    def getStats(self):
+    def getStats(self) -> dict:
         """Returns a dictionary of the protein, vitamins and minerals statistics and cash of the human."""
 
         return {
